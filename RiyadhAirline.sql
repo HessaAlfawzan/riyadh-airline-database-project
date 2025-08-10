@@ -1,6 +1,6 @@
--- create database RiyadhAirline;
+ create database RiyadhAirline;
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Passenger (
 Passenger_ID int auto_increment primary key,
 First_Name varchar(255) Not null,
@@ -8,40 +8,40 @@ Last_Name varchar(255) Not null,
 Birthdate date Not null,
 Email varchar(255) Not null unique,
 phone_number varchar(15) not null,
-Is_Member boolean default false); */
+Is_Member boolean default false); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Booking(
 Booking_ID int auto_increment primary key,
 Trip_Time Timestamp Not null,
 Total_Price decimal(10,2) Not null,
-Payment_Method ENUM('Apple Pay', 'Credit Card', 'Cash', 'Tabby', 'Tamara') NOT NULL); */
+Payment_Method ENUM('Apple Pay', 'Credit Card', 'Cash', 'Tabby', 'Tamara') NOT NULL); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Passenger_Booking(
 Passenger_ID int not null ,
 Booking_ID int not null,
 primary key(Passenger_ID,Booking_ID),
 foreign key (Passenger_ID) references Passenger(Passenger_ID),
-foreign key (Booking_ID) references Booking(Booking_ID)); */
+foreign key (Booking_ID) references Booking(Booking_ID)); 
 
 
-/* use RiyadhAirline;
+use RiyadhAirline;
 create table Aircraft(
 Aircraft_ID int auto_increment primary key,
 Manufacturing_Date date,
 Number_Of_Seats int not null,
-Manufacturer varchar(255)) */
+Manufacturer varchar(255)) 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Flight(
 Flight_ID int auto_increment primary key,
 Duration time not null,
 Flight_Status enum('Scheduled','Delayed','Cancelled','Completed') not null,
 Aircraft_ID int not null,
-foreign key (Aircraft_ID) references Aircraft(Aircraft_ID)); */
+foreign key (Aircraft_ID) references Aircraft(Aircraft_ID)); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Ticket (
 Ticket_ID int auto_increment primary key,
 Seat_Number varchar(5) not null,
@@ -52,9 +52,9 @@ Booking_ID int not null,
 Flight_ID int not null,
 foreign key (passenger_ID) references passenger(passenger_ID),
 foreign key (Flight_ID) references Flight(Flight_ID),
-foreign key (Booking_ID) references Booking(Booking_ID)); */
+foreign key (Booking_ID) references Booking(Booking_ID)); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Employee(
 Employee_ID int auto_increment primary key,
 First_Name varchar(255) not null,
@@ -64,33 +64,33 @@ Email varchar(255) not null unique,
 phone_number varchar(15) not null,
 Salary decimal(10,2) not null,
 Job_Title varchar(255) not null,
-Joined_at date); */
+Joined_at date); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Employee_Flight (
 Employee_ID int not null,
 Flight_ID int not null,
 primary key(Employee_ID,Flight_ID),
 foreign key (Employee_ID) references Employee(Employee_ID),
-foreign key (Flight_ID) references Flight(Flight_ID)); */
+foreign key (Flight_ID) references Flight(Flight_ID)); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Airport(
 Airport_ID int auto_increment primary key,
 Airport_Name varchar(255) not null,
 Town varchar(255) not null,
-Country varchar(255) not null); */
+Country varchar(255) not null); 
 
-/* use RiyadhAirline;
+ use RiyadhAirline;
 create table Airport_Flight(
 Airport_ID int not null,
 Flight_ID int not null,
 Flight_Role Enum('Arrival','Departure') not null,
 primary key(Airport_ID,Flight_ID),
 foreign key (Airport_ID) references Airport(Airport_ID),
-foreign key (Flight_ID) references Flight(Flight_ID)); */
+foreign key (Flight_ID) references Flight(Flight_ID)); 
 
-/* INSERT INTO Aircraft (Manufacturing_Date, Number_Of_Seats, Manufacturer) VALUES
+ INSERT INTO Aircraft (Manufacturing_Date, Number_Of_Seats, Manufacturer) VALUES
 ('2010-05-12', 180, 'Boeing'),
 ('2012-03-20', 220, 'Airbus'),
 ('2015-11-11', 150, 'Embraer'),
@@ -105,9 +105,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('2021-10-10', 220, 'Bombardier'),
 ('2013-05-25', 180, 'Boeing'),
 ('2014-03-19', 210, 'Airbus'),
-('2015-07-01', 160, 'Embraer'); */
+('2015-07-01', 160, 'Embraer'); 
 
-/* INSERT INTO Airport (Airport_Name, Town, Country) VALUES
+ INSERT INTO Airport (Airport_Name, Town, Country) VALUES
 ('King Khalid International', 'Riyadh', 'Saudi Arabia'),
 ('King Abdulaziz International', 'Jeddah', 'Saudi Arabia'),
 ('King Fahd International', 'Dammam', 'Saudi Arabia'),
@@ -127,9 +127,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('Amman Queen Alia International', 'Amman', 'Jordan'),
 ('Beirut Rafic Hariri International', 'Beirut', 'Lebanon'),
 ('Tehran Imam Khomeini International', 'Tehran', 'Iran'),
-('Istanbul Airport', 'Istanbul', 'Turkey'); */
+('Istanbul Airport', 'Istanbul', 'Turkey'); 
 
-/* INSERT INTO Flight (Duration, Flight_Status, Aircraft_ID) VALUES
+INSERT INTO Flight (Duration, Flight_Status, Aircraft_ID) VALUES
 ('02:30:00', 'Scheduled', 1),
 ('03:00:00', 'Delayed', 2),
 ('01:45:00', 'Cancelled', 3),
@@ -159,9 +159,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('03:05:00', 'Scheduled', 12),
 ('04:30:00', 'Completed', 13),
 ('02:15:00', 'Scheduled', 14),
-('03:55:00', 'Cancelled', 15); */
+('03:55:00', 'Cancelled', 15); 
 
-/* INSERT INTO Passenger (First_Name, Last_Name, Birthdate, Email, phone_number, Is_Member) VALUES
+ INSERT INTO Passenger (First_Name, Last_Name, Birthdate, Email, phone_number, Is_Member) VALUES
 ('Ahmed', 'Al-Saud', '1985-06-15', 'ahmed1@example.com', '0500000001', TRUE),
 ('Sara', 'Al-Harbi', '1990-12-05', 'sara2@example.com', '0500000002', FALSE),
 ('Mohammed', 'Al-Fahad', '1988-03-22', 'mohammed3@example.com', '0500000003', TRUE),
@@ -191,9 +191,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('Noor', 'Al-Khaldi', '1995-07-06', 'noor27@example.com', '0500000027', TRUE),
 ('Tariq', 'Al-Sultan', '1988-02-08', 'tariq28@example.com', '0500000028', FALSE),
 ('Dina', 'Al-Saadi', '1990-11-11', 'dina29@example.com', '0500000029', TRUE),
-('Abdulrahman', 'Al-Bishi', '1982-12-19', 'abdulrahman30@example.com', '0500000030', FALSE); */
+('Abdulrahman', 'Al-Bishi', '1982-12-19', 'abdulrahman30@example.com', '0500000030', FALSE); 
 
-/* INSERT INTO Employee (First_Name, Last_Name, Birthdate, Email, phone_number, Salary, Job_Title, Joined_at) VALUES
+ INSERT INTO Employee (First_Name, Last_Name, Birthdate, Email, phone_number, Salary, Job_Title, Joined_at) VALUES
 ('Fahad', 'Al-Rashid', '1980-05-10', 'fahad1@example.com', '0550000001', 8000.00, 'Pilot', '2010-03-01'),
 ('Maha', 'Al-Johani', '1985-07-15', 'maha2@example.com', '0550000002', 6500.00, 'Flight Attendant', '2012-06-10'),
 ('Saad', 'Al-Harbi', '1978-11-20', 'saad3@example.com', '0550000003', 9000.00, 'Captain', '2008-09-15'),
@@ -213,9 +213,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('Ibrahim', 'Al-Shehri', '1986-06-02', 'ibrahim17@example.com', '0550000017', 8200.00, 'Pilot', '2014-04-14'),
 ('Areej', 'Al-Zahrani', '1990-12-28', 'areej18@example.com', '0550000018', 6150.00, 'Flight Attendant', '2015-06-06'),
 ('Sultan', 'Al-Najdi', '1980-09-09', 'sultan19@example.com', '0550000019', 9100.00, 'Captain', '2006-03-21'),
-('Lama', 'Al-Kurdi', '1994-01-17', 'lama20@example.com', '0550000020', 6050.00, 'Flight Attendant', '2021-02-12');*/
+('Lama', 'Al-Kurdi', '1994-01-17', 'lama20@example.com', '0550000020', 6050.00, 'Flight Attendant', '2021-02-12');
 
-/* INSERT INTO Booking (Trip_Time, Total_Price, Payment_Method) VALUES
+ INSERT INTO Booking (Trip_Time, Total_Price, Payment_Method) VALUES
 ('2025-01-10 10:00:00', 1500.00, 'Credit Card'),
 ('2025-01-11 12:30:00', 800.00, 'Cash'),
 ('2025-01-12 09:15:00', 2300.00, 'Apple Pay'),
@@ -248,9 +248,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('2025-02-06 18:00:00', 850.00, 'Cash'),
 ('2025-02-07 08:15:00', 1250.00, 'Apple Pay'),
 ('2025-02-08 14:10:00', 950.00, 'Tabby'),
-('2025-02-09 17:45:00', 2100.00, 'Tamara'); */
+('2025-02-09 17:45:00', 2100.00, 'Tamara'); 
 
-/* INSERT INTO Passenger_Booking (Passenger_ID, Booking_ID) VALUES
+ INSERT INTO Passenger_Booking (Passenger_ID, Booking_ID) VALUES
 (1, 1),
 (2, 1),
 (3, 2),
@@ -280,9 +280,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 (27, 17),
 (28, 18),
 (29, 19),
-(30, 20); */
+(30, 20); 
 
-/* INSERT INTO Ticket (Seat_Number, Class, Price, Passenger_ID, Booking_ID, Flight_ID) VALUES
+ INSERT INTO Ticket (Seat_Number, Class, Price, Passenger_ID, Booking_ID, Flight_ID) VALUES
 ('1A', 'Economy', 200.00, 1, 1, 1),
 ('2B', 'Business', 500.00, 2, 1, 1),
 ('3C', 'First', 1000.00, 3, 2, 2),
@@ -312,9 +312,9 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 ('27C', 'Economy', 230.00, 27, 17, 17),
 ('28D', 'Economy', 210.00, 28, 18, 18),
 ('29E', 'First', 1550.00, 29, 19, 19),
-('30F', 'Economy', 200.00, 30, 20, 20); */
+('30F', 'Economy', 200.00, 30, 20, 20); 
 
-/* INSERT INTO Employee_Flight (Employee_ID, Flight_ID) VALUES
+ INSERT INTO Employee_Flight (Employee_ID, Flight_ID) VALUES
 (1, 1), (2, 1), (3, 1),
 (4, 2), (5, 2), (6, 2),
 (7, 3), (8, 3), (9, 3),
@@ -344,10 +344,10 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 (19, 27), (20, 27), (1, 27),
 (2, 28), (3, 28), (4, 28),
 (5, 29), (6, 29), (7, 29),
-(8, 30), (9, 30), (10, 30); */
+(8, 30), (9, 30), (10, 30); 
 
 
-/* INSERT INTO Airport_Flight (Airport_ID, Flight_ID, Flight_Role) VALUES
+ INSERT INTO Airport_Flight (Airport_ID, Flight_ID, Flight_Role) VALUES
 (1, 1, 'Departure'), (2, 1, 'Arrival'),
 (3, 2, 'Departure'), (4, 2, 'Arrival'),
 (5, 3, 'Departure'), (6, 3, 'Arrival'),
@@ -377,112 +377,112 @@ foreign key (Flight_ID) references Flight(Flight_ID)); */
 (13, 27, 'Departure'), (14, 27, 'Arrival'),
 (15, 28, 'Departure'), (16, 28, 'Arrival'),
 (17, 29, 'Departure'), (18, 29, 'Arrival'),
-(19, 30, 'Departure'), (20, 30, 'Arrival'); */
+(19, 30, 'Departure'), (20, 30, 'Arrival'); 
 
 
--- create index index_PEmail on passenger (email);
+ create index index_PEmail on passenger (email);
 
--- create index index_EEmail on Employee (email);
--- create index index_EjobTitle on Employee (Job_Title);
+ create index index_EEmail on Employee (email);
+ create index index_EjobTitle on Employee (Job_Title);
 
--- create index idx_flight_status on Flight(Flight_Status);
--- create index idx_flight_aircraft on Flight(Aircraft_ID);
+ create index idx_flight_status on Flight(Flight_Status);
+ create index idx_flight_aircraft on Flight(Aircraft_ID);
 
--- create index index_booking_triptime on Booking(Trip_Time);
+ create index index_booking_triptime on Booking(Trip_Time);
 
--- create index idx_ticket_booking_flight on Ticket(Booking_ID, Flight_ID);
+ create index idx_ticket_booking_flight on Ticket(Booking_ID, Flight_ID);
 
--- create index idx_passenger_booking on Passenger_Booking(Passenger_ID, Booking_ID);
+ create index idx_passenger_booking on Passenger_Booking(Passenger_ID, Booking_ID);
 
--- create index idx_airport_flight_role on Airport_Flight(Flight_ID, Flight_Role);
+ create index idx_airport_flight_role on Airport_Flight(Flight_ID, Flight_Role);
 
--- create index idx_employee_flight on Employee_Flight(Employee_ID, Flight_ID);
+ create index idx_employee_flight on Employee_Flight(Employee_ID, Flight_ID);
 
-/* update ticket
+ update ticket
 set class = 'First'
-where passenger_id = 5; */
+where passenger_id = 5; 
 
-/* update Flight
+update Flight
 set Flight_Status = 'Completed'
-where Flight_ID = 3; */
+where Flight_ID = 3; 
 
-/* delete from passenger
-where passenger_id not in (select passenger_id from ticket); */
+ delete from passenger
+where passenger_id not in (select passenger_id from ticket); 
 
-/* delete from flight
-where flight_status = 'Cancelled'; */
+ delete from flight
+where flight_status = 'Cancelled'; 
 
-/* select count(passenger_ID)
+ select count(passenger_ID)
 from ticket 
-where flight_ID = 1; */ -- the number of passengers assigned to flight 1
+where flight_ID = 1;  -- the number of passengers assigned to flight 1
 
 
-/* select First_Name , Last_Name , job_title
+ select First_Name , Last_Name , job_title
 from Employee e
 join Employee_Flight ef on e.Employee_ID = ef.Employee_ID
-where flight_ID = 3; */ -- Employees on flight 3
+where flight_ID = 3;  -- Employees on flight 3
 
-/* select avg(salary)
+ select avg(salary)
 from employee 
-where job_title = 'Captain'; */ -- captains average salary
+where job_title = 'Captain';  -- captains average salary
 
-/* select count(Passenger_ID)
+ select count(Passenger_ID)
 from passenger 
-where is_member = true; */  
+where is_member = true; 
 
-/* select count(passenger_id)
+select count(passenger_id)
 from passenger_booking
-where booking_id = 17; */
+where booking_id = 17; 
 
-/* select * 
+ select * 
 from flight
-where flight_status = 'Cancelled'; */
+where flight_status = 'Cancelled'; 
 
-/* select max(Duration)
-from flight; */
+ select max(Duration)
+from flight; 
 
-/* select job_title , count(employee_id)
+ select job_title , count(employee_id)
 from employee
-group by job_title; */
+group by job_title; 
 
-/* select sum(price)
+ select sum(price)
 from ticket 
-where flight_id = 13; */
+where flight_id = 13; 
 
-/* select * from passenger 
-where First_name like 'kha___'; */
+ select * from passenger 
+where First_name like 'kha___'; 
 
-/* select * from 
+ select * from 
 employee
-where salary > 9000; */
+where salary > 9000;
 
-/* select avg(price)
+ select avg(price)
 from ticket 
-where class = 'Economy'; */
+where class = 'Economy'; 
 
-/* select class , count(ticket_Id)
+ select class , count(ticket_Id)
 from ticket 
 where flight_id = 6
-group by class; */
+group by class; 
 
-/* select count(flight_id) as Number_of_Departing_Flights
+ select count(flight_id) as Number_of_Departing_Flights
 from airport_flight af
 join airport a on a.airport_id = af.airport_id
-where a.airport_name like 'king khalid%' and af.flight_role ='Departure'; */
+where a.airport_name like 'king khalid%' and af.flight_role ='Departure'; 
 
-/* select town , count(flight_id) as connected_flights
+ select town , count(flight_id) as connected_flights
 from airport_flight af
 join airport a on af.airport_id = a.airport_id
-group by town */
+group by town 
 
-/* select distinct First_Name, Last_Name
+ select distinct First_Name, Last_Name
 from Passenger p
 join Ticket t on p.Passenger_ID = t.Passenger_ID
 join Employee_Flight ef on t.Flight_ID = ef.Flight_ID
 join Employee e on ef.Employee_ID = e.Employee_ID
-where e.First_Name = 'Fahad' and e.Last_Name = 'Al-Rashid'; */
+where e.First_Name = 'Fahad' and e.Last_Name = 'Al-Rashid'; 
 
-/* delimiter //
+delimiter //
 create procedure AddPassenger (
  in p_First_Name varchar(255),
  in p_Last_Name varchar(255),
@@ -496,10 +496,10 @@ create procedure AddPassenger (
      First_Name, Last_Name, Birthdate, Email, Phone_Number, Is_Member
     ) 
     values ( p_First_Name, p_Last_Name , p_Birthdate, p_email, p_phone_number, p_is_Member);
-    end // */
+    end // 
     
     
-    /* delimiter //
+     delimiter //
     create procedure UpdatePassenger (
     in p_Passenger_ID int,
     in p_First_Name varchar(255),
@@ -519,10 +519,10 @@ create procedure AddPassenger (
      phone_number = p_phone_number,
      is_member = p_is_member
      where passenger_id = p_Passenger_ID;
-     end // */
+     end // 
  
      
-     /* delimiter //
+     delimiter //
      create procedure AddEmployee (
      in E_Employee_ID int,
      in E_First_Name varchar(255),
@@ -538,46 +538,46 @@ create procedure AddPassenger (
      Email,phone_number,Salary,Job_Title,Joined_at)
      values (E_Employee_ID,E_First_Name,E_Last_Name,E_Birthdate,
      E_email,E_phone_number,E_Salary,E_job_itle,E_joined_at);
-     end // */
+     end // 
      
-     /* delimiter //
+     delimiter //
      create procedure DeleteEmployee (
      in E_Employee_ID int
      )
      begin 
      delete from Employee 
      where Employee_ID = E_Employee_ID;
-     end // */
+     end // 
      
-	/* delimiter //
+	 delimiter //
 create procedure GetPassengerByID (
 	in p_Passenger_ID int
 )
 begin
     select * from Passenger
     where Passenger_ID = p_Passenger_ID;
-end // */
+end // 
 
-/* create view GetMembers AS
+ create view GetMembers AS
 select * from passenger
-where is_member = true; */
+where is_member = true; 
 
-/* create view PassengerContacts AS
+ create view PassengerContacts AS
 select
   Passenger_ID,
   CONCAT(First_Name, ' ', Last_Name) AS Full_Name,
   Email,
   phone_number
-from Passenger; */
+from Passenger; 
 
-/* call AddPassenger('Ahmed', 'Ali', '1990-05-15', 'ahmed.ali@example.com', '0551234567', TRUE);
+ call AddPassenger('Ahmed', 'Ali', '1990-05-15', 'ahmed.ali@example.com', '0551234567', TRUE);
 call AddPassenger('Lina', 'Mohammed', '1988-07-22', 'lina.m@example.com', '0569876543', FALSE);
 call AddPassenger('Khalid', 'Yousef', '1995-03-10', 'khalid.y@example.com', '0551122334', TRUE);
-call AddPassenger('Sara', 'Hassan', '1992-12-01', 'sara.h@example.com', '0549988776', FALSE); */
+call AddPassenger('Sara', 'Hassan', '1992-12-01', 'sara.h@example.com', '0549988776', FALSE); 
 
-/* call AddEmployee(101, 'Sara', 'Khalid', '1985-11-20', 'sara.k@example.com', '0501234567', 8500.50, 'Manager', '2023-01-10');
+ call AddEmployee(101, 'Sara', 'Khalid', '1985-11-20', 'sara.k@example.com', '0501234567', 8500.50, 'Manager', '2023-01-10');
 call AddEmployee(102, 'Omar', 'Nasser', '1990-06-15', 'omar.n@example.com', '0507654321', 7000.00, 'Developer', '2022-03-05');
-call AddEmployee(103, 'Mona', 'Saleh', '1987-09-25', 'mona.s@example.com', '0509876543', 7200.00, 'Analyst', '2021-08-17'); */
+call AddEmployee(103, 'Mona', 'Saleh', '1987-09-25', 'mona.s@example.com', '0509876543', 7200.00, 'Analyst', '2021-08-17'); 
 
 
 
