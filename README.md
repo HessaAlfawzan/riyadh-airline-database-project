@@ -1,6 +1,6 @@
 # riyadh-airline-database-project
 
-📝 Description
+## 📝 Description
 RiyadhAirline is a database project designed to manage the core operations of an airline company. It covers all aspects related to passengers, bookings, flights, tickets, employees, airports, and aircrafts. The database includes relationships, indexes, stored procedures, and real sample data for testing and analysis.
 
 
