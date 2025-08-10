@@ -14,7 +14,7 @@ RiyadhAirline is a database project designed to manage the core operations of an
 - Employee
 - Airport
   
-  🔹 Associative (Linking) Entities:
+🔹 Associative (Linking) Entities:
 - Passenger_Booking – links passengers with their bookings.
 - Employee_Flight – links employees (e.g., pilots, attendants) to flights.
 - Airport_Flight – links airports with flights (with role as Departure/Arrival).
