@@ -37,14 +37,15 @@ RiyadhAirline is a database project designed to manage the core operations of an
 
 
 
-
 ## 🧠 Relationships
-Passenger ↔ Booking (Many-to-Many via Passenger_Booking)
-Booking → Ticket (One-to-Many)
-Flight ↔ Employee (Many-to-Many via Employee_Flight)
-Flight ↔ Airport (Many-to-Many via Airport_Flight)
-Flight → Aircraft (Many-to-One)
-Ticket → Passenger, Booking, Flight (Many-to-One)
+
+- `Passenger` ↔ `Booking` (Many-to-Many via `Passenger_Booking`)
+- `Booking` → `Ticket` (One-to-Many)
+- `Flight` ↔ `Employee` (Many-to-Many via `Employee_Flight`)
+- `Flight` ↔ `Airport` (Many-to-Many via `Airport_Flight`)
+- `Flight` → `Aircraft` (Many-to-One)
+- `Ticket` → `Passenger`, `Booking`, `Flight` (Many-to-One)
+
 
 
 ## 📦 Sample Data Inserted
