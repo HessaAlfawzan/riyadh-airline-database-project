@@ -1,11 +1,10 @@
 # riyadh-airline-database-project
 
-✈️ RiyadhAirline Database Project
 📝 Description
 RiyadhAirline is a database project designed to manage the core operations of an airline company. It covers all aspects related to passengers, bookings, flights, tickets, employees, airports, and aircrafts. The database includes relationships, indexes, stored procedures, and real sample data for testing and analysis.
 
 
-🧱 Database Structure
+## Database Structure
 🔹 Main Entities:
 - Passenger
 - Booking
@@ -15,7 +14,6 @@ RiyadhAirline is a database project designed to manage the core operations of an
 - Employee
 - Airport
   
-
   🔹 Associative (Linking) Entities:
 - Passenger_Booking – links passengers with their bookings.
 - Employee_Flight – links employees (e.g., pilots, attendants) to flights.
@@ -23,22 +21,24 @@ RiyadhAirline is a database project designed to manage the core operations of an
 
 
   
-- 🗂️ Tables & Key Fields
-Table	              |             Description
-Passenger           |   Passenger details and membership status
-Booking	            |       Booking info and payment method
-Passenger_Booking	  |  Many-to-many relation between passenger & booking
-Aircraft            |	  Aircraft details, manufacturer, and seat count
-Flight	            |   Flight info including schedule, aircraft, status
-Ticket	            |     Ticket details per passenger for a flight
-Employee            |  	Employee info including job title and salary
-Employee_Flight     |	       Links employees to flights
-Airport             |         	Airport details
-Airport_Flight	    |    Links flights with airports (Departure/Arrival)
+## 🗂️ Tables & Key Fields
+| Table              | Description                                      |
+|--------------------|--------------------------------------------------|
+| Passenger          | Passenger details and membership status          |
+| Booking            | Booking info and payment method                  |
+| Passenger_Booking  | Many-to-many relation between passenger & booking|
+| Aircraft           | Aircraft details, manufacturer, and seat count   |
+| Flight             | Flight info including schedule, aircraft, status |
+| Ticket             | Ticket details per passenger for a flight        |
+| Employee           | Employee info including job title and salary     |
+| Employee_Flight    | Links employees to flights                       |
+| Airport            | Airport details                                  |
+| Airport_Flight     | Links flights with airports (Departure/Arrival)  |
 
 
 
-🧠 Relationships
+
+## 🧠 Relationships
 Passenger ↔ Booking (Many-to-Many via Passenger_Booking)
 Booking → Ticket (One-to-Many)
 Flight ↔ Employee (Many-to-Many via Employee_Flight)
@@ -47,7 +47,7 @@ Flight → Aircraft (Many-to-One)
 Ticket → Passenger, Booking, Flight (Many-to-One)
 
 
-📦 Sample Data Inserted
+## 📦 Sample Data Inserted
 ✅ 30 Passengers
 ✅ 20 Employees
 ✅ 30 Flights
@@ -57,14 +57,14 @@ Ticket → Passenger, Booking, Flight (Many-to-One)
 ✅ 30 Tickets
 
 
-🔄 Stored Procedures
+## 🔄 Stored Procedures
 - AddPassenger – Add a new passenger
 - UpdatePassenger – Update existing passenger details
 - AddEmployee – Add a new employee
 - DeleteEmployee – Delete an employee by ID
 
 
-📊 Sample Queries
+## 📊 Sample Queries
 - Count passengers on a specific flight
 - List employees assigned to a flight
 - Average salary of Captains
@@ -72,7 +72,7 @@ Ticket → Passenger, Booking, Flight (Many-to-One)
 - Number of loyalty members
 
   
-🧼 Data Maintenance Actions
+## 🧼 Data Maintenance Actions
 ✅ Updated flight statuses and ticket information
 ✅ Deleted passengers with no bookings/tickets
 ✅ Removed canceled flights
