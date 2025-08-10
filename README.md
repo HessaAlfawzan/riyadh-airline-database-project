@@ -1,1 +1,1 @@
-# riyadh-airline-dbms-project
+# riyadh-airline-database-project
