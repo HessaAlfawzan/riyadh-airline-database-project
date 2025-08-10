@@ -3,6 +3,9 @@
 ## 📝 Description
 RiyadhAirline is a database project designed to manage the core operations of an airline company. It covers all aspects related to passengers, bookings, flights, tickets, employees, airports, and aircrafts. The database includes relationships, indexes, stored procedures, and real sample data for testing and analysis.
 
+## Riyadh Airline ERD
+<img width="841" height="1001" alt="image" src="https://github.com/user-attachments/assets/bd87a03a-1cb7-432c-8f97-84e0534c2305" />
+
 
 ## Database Structure
 🔹 Main Entities:
@@ -18,7 +21,6 @@ RiyadhAirline is a database project designed to manage the core operations of an
 - Passenger_Booking – links passengers with their bookings.
 - Employee_Flight – links employees (e.g., pilots, attendants) to flights.
 - Airport_Flight – links airports with flights (with role as Departure/Arrival).
-
 
   
 ## 🗂️ Tables & Key Fields
